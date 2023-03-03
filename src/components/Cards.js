@@ -2,7 +2,7 @@ import React from "react";
 
 function Cards ({movie, setDisplay, setMovieOnDisplay, container}){
 
-    const {title, release_date, starring} = movie
+    const {title, starring} = movie
 
     function handleClick(){
         if(!container) {
@@ -15,8 +15,7 @@ function Cards ({movie, setDisplay, setMovieOnDisplay, container}){
     return(
         <div className="card movieCard" onClick={handleClick}>
             <h3>{title}</h3>
-            <h5>{starring}</h5>
-            <h6>{release_date}</h6>
+            Starring: <h5>{starring}</h5>
         </div>
     )
 }

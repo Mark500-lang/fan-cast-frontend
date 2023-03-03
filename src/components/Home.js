@@ -5,8 +5,7 @@ import MovieReviews from './MovieReviews.js';
 
 function Home(){
 
-    const [movies, setMovies] = useState();
-    
+    const [movies, setMovies] = useState(); 
     
     const [display, setDisplay] = useState("movieReviews");
     const [movieOnDisplay, setMovieOnDisplay] = useState([]);
@@ -25,12 +24,6 @@ function Home(){
 
     }, [])    
 
-    /*const handleSearch=(e)=> {
-        e.preventDefault()
-        setQuery(e.target.value)
-        console.log(setQuery)
-    }*/
-
     return(
         <div className="container ">
             
@@ -43,5 +36,5 @@ function Home(){
         </div>
     )
 }
-//<SearchMovie movies={movies} handleSearch={handleSearch}/>
+
 export default Home;
