@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-//import SearchMovie from "./SearchMovie.js";
+import SearchMovie from "./SearchMovie.js";
 import FeaturedMovies from './FeaturedMovies.js';
 import MovieReviews from './MovieReviews.js';
 
@@ -24,6 +24,11 @@ function Home(){
 
     }, [])    
 
+    const search = movies && movies.map((movie)=> <SearchMovie movie={movie}
+            setMovies={setMovies}
+            setMovieOnDisplay={setMovieOnDisplay}
+            key={movie.id}
+            />)
     return(
         <div className="container ">
             
@@ -31,7 +36,7 @@ function Home(){
                 display === "movieReviews" ?
                 <FeaturedMovies movies={movies} setDisplay={setDisplay} setMovieOnDisplay={setMovieOnDisplay}/>
                 :
-                <MovieReviews setDisplay={setDisplay} movieOnDisplay={movieOnDisplay} setMoviesOnDisplay={setMovieOnDisplay}/>   
+                <MovieReviews setDisplay={setDisplay} movieOnDisplay={movieOnDisplay} setMovieOnDisplay={setMovieOnDisplay}/>   
             }
         </div>
     )

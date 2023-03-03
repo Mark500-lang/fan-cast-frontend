@@ -18,12 +18,13 @@
   width: 230px;
   height: 250px;
   margin: 15px;
-  box-shadow: 10px 10px 15px rgb(0, 0, 0, 0.5) ;
-  background: linear-gradient(to right bottom, #000000cb, #660461a2);
+  box-shadow: 10px 10px 15px rgb(0, 0, 0, 0.5);
+  background-color: rgb(204, 233, 236);
+  /*background: linear-gradient(to right bottom, #817373, #660461a2);*/
   /*backdrop-filter: blur(2px);*/
   justify-content: center;
   text-align: center;
-  color: rgba(255, 208, 0, 0.911);
+  color: rgba(0, 0, 0, 0.911);
 }
 
 .navbar{

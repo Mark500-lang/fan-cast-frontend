@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function MovieReviews({setDisplay, movieOnDisplay, setMoviesOnDisplay}){
+function MovieReviews({setDisplay, movieOnDisplay, setMovieOnDisplay}){
     const {id, title, release_date, starring, quote} = movieOnDisplay
 
 //setting state for form data
@@ -13,8 +13,9 @@ function MovieReviews({setDisplay, movieOnDisplay, setMoviesOnDisplay}){
 //post review to database
     const handleSubmit = (event)=>{
         event.preventDefault()
-        //console.log(`${id}`)
-        setMoviesOnDisplay({...movieOnDisplay.reviews,formData})
+        setMovieOnDisplay({...movieOnDisplay.reviews,formData})
+        console.log(movieOnDisplay)
+        
         fetch("/reviews" , {
             method: "POST",
             headers: {
@@ -37,8 +38,7 @@ function MovieReviews({setDisplay, movieOnDisplay, setMoviesOnDisplay}){
     function handleDelete(e){
         e.preventDefault()
         var remove = e.target.value
-        console.log(remove)
-        //parentElementremove
+
         fetch(`/reviews/${remove}`, {
             method: "DELETE",
         })
@@ -46,7 +46,7 @@ function MovieReviews({setDisplay, movieOnDisplay, setMoviesOnDisplay}){
         .then(res => console.log(res))
     }
 
-//return to featured movies
+//return to featured movies list
     const handleClick =()=>{
         setDisplay("movieReviews")
     }
@@ -102,8 +102,5 @@ function MovieReviews({setDisplay, movieOnDisplay, setMoviesOnDisplay}){
         </div>
     )
 }
-/*<div>
-                        <label>Movie Id</label>
-                        <input name='movie' className="form-control form-control-sm" type="number" id="movie" placeholder="...movie id" onChange={handleOnChange} value={formData.movie}></input>
-                    </div>*/
+
 export default MovieReviews;
