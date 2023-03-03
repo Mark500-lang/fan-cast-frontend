@@ -24,14 +24,8 @@ function Home(){
 
     }, [])    
 
-    const search = movies && movies.map((movie)=> <SearchMovie movie={movie}
-            setMovies={setMovies}
-            setMovieOnDisplay={setMovieOnDisplay}
-            key={movie.id}
-            />)
     return(
         <div className="container ">
-            
             {
                 display === "movieReviews" ?
                 <FeaturedMovies movies={movies} setDisplay={setDisplay} setMovieOnDisplay={setMovieOnDisplay}/>

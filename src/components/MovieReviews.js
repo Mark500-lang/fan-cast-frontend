@@ -86,7 +86,7 @@ function MovieReviews({setDisplay, movieOnDisplay, setMovieOnDisplay}){
                     movieOnDisplay.reviews && movieOnDisplay.reviews.map((review)=>{
                     return (
                         <div className="card" key={review.id}>
-                            <h3>Rating: {review.score}</h3>ew
+                            <h3>Rating: {review.score}</h3>
                             <p>{review.comment}</p>
                             <div>
                                 <button type='delete' onClick={handleDelete} value={review.id} className='btn btn-danger btn-sm'>Delete Review</button>

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-function SearchMovie({setMovies}){
-    const [titleSearch, setTitleSearch] = useState({title: ""})
+function SearchMovie(){
+    const [title, setTitle] = useState("")
 
     function handleSearch(e) {
         e.preventDefault()
-        const title = titleSearch.map((t)=>t.title)
-        console.log(title)
+        console.log()
         
         fetch(`/movies/${title}`, {
             method: "GET",
@@ -21,18 +20,11 @@ function SearchMovie({setMovies}){
     
     }
 
-    const handleOnChange=(event)=>{
-        titleSearch[event.target.name] = event.target.value
-        setTitleSearch({
-            ...titleSearch,
-            [event.target.name]:event.target.value
-        })
-    }
 
     return(
         <form className="d-flex form-inline my-2 my-lg-0" onSubmit={handleSearch}>
-            <input name="title" className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={handleOnChange} value={titleSearch.title}/>
-                <button className="btn btn-sm btn-outline-secondary" type="submit" onSubmit={handleSearch}><i className="fa-solid fa-magnifying-glass"></i></button>
+            <input name="title" className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value={title} onChange={(event)=>setTitle(event.target.value)}/>
+            <button className="btn btn-sm btn-outline-secondary" type="submit" onSubmit={handleSearch}><i className="fa-solid fa-magnifying-glass"></i></button>
         </form>
     )
 }
