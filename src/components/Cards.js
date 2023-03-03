@@ -8,7 +8,6 @@ function Cards ({movie, setDisplay, setMovieOnDisplay, container}){
         if(!container) {
             setMovieOnDisplay(movie)
             setDisplay("movieSwitch")
-            console.log(setDisplay)
         } else {
             console.log(movie)
         }

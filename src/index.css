@@ -1,3 +1,6 @@
+/*#root{
+  background: linear-gradient(to right, #19222b, #73828b);
+}*/
 .container{
   position: relative;
   display: flex;
@@ -16,9 +19,11 @@
   height: 290px;
   margin: 15px;
   box-shadow: 10px 10px 15px rgb(0, 0, 0, 0.5) ;
-  background: linear-gradient(to right bottom, #57032cef, #49bce35e);
-  backdrop-filter: blur(2px);
+  background: linear-gradient(to right bottom, #000000cb, #660461a2);
+  /*backdrop-filter: blur(2px);*/
   justify-content: center;
   text-align: center;
   color: rgba(255, 208, 0, 0.911);
 }
+
+
