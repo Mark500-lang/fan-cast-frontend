@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import SearchMovie from "./SearchMovie.js";
 
-function MovieReviews({setDisplay, movieOnDisplay, setMovieOnDisplay}){
+function MovieReviews({setDisplay, movies, movieOnDisplay, setMovieOnDisplay}){
     const {id, title, release_date, starring, quote} = movieOnDisplay
 
 //setting state for form data
@@ -13,8 +14,6 @@ function MovieReviews({setDisplay, movieOnDisplay, setMovieOnDisplay}){
 //post review to database
     const handleSubmit = (event)=>{
         event.preventDefault()
-        setMovieOnDisplay({...movieOnDisplay.reviews,formData})
-        console.log(movieOnDisplay)
         
         fetch("/reviews" , {
             method: "POST",
@@ -25,6 +24,11 @@ function MovieReviews({setDisplay, movieOnDisplay, setMovieOnDisplay}){
         })
         .then((response)=> response.json())
         .then(data=> console.log(data));
+
+        setMovieOnDisplay(movieOnDisplay)
+        console.log(movieOnDisplay)
+        setMovieOnDisplay({...movieOnDisplay.reviews,formData})
+        console.log(movieOnDisplay)
     }
 
     const handleOnChange=(event)=>{
@@ -44,6 +48,8 @@ function MovieReviews({setDisplay, movieOnDisplay, setMovieOnDisplay}){
         })
         .then(res => res.json())
         .then(res => console.log(res))
+        
+        setMovieOnDisplay(movieOnDisplay)
     }
 
 //return to featured movies list

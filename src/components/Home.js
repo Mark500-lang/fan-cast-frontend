@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import SearchMovie from "./SearchMovie.js";
 import FeaturedMovies from './FeaturedMovies.js';
 import MovieReviews from './MovieReviews.js';
 
@@ -30,7 +29,7 @@ function Home(){
                 display === "movieReviews" ?
                 <FeaturedMovies movies={movies} setDisplay={setDisplay} setMovieOnDisplay={setMovieOnDisplay}/>
                 :
-                <MovieReviews setDisplay={setDisplay} movieOnDisplay={movieOnDisplay} setMovieOnDisplay={setMovieOnDisplay}/>   
+                <MovieReviews setDisplay={setDisplay} movies={movies} movieOnDisplay={movieOnDisplay} setMovieOnDisplay={setMovieOnDisplay}/>   
             }
         </div>
     )
