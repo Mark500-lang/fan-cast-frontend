@@ -21,17 +21,10 @@ function NavBar(){
                     </NavLink>
                 </li>
             </ul>
-            <SearchMovie/>
+            
             </div>
         </nav>
     )
 }
-/* 
-                
-            
-<NavLink className="nav-link" to='/' style={isActive => ({
-                            color: isActive ? "gold" : "white"
-                        })}></NavLink>
-
-                        */
+/*<SearchMovie/>*/
 export default NavBar;

@@ -30,6 +30,18 @@
 .navbar{
   background-color: rgb(36, 36, 36);
 }
+
+#searchBar{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.search-field{
+  width: 85vw;
+}
+
 .moviereviews{
   position: relative;
   display: flex;
